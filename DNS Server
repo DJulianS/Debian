@@ -1,0 +1,24 @@
+apt install bind9 dnsutils
+cd /etc/bind
+nano named.conf.local
+
+zone "oscmantap.com" {
+type master ;
+file "/etc/bind/db.mantap";
+};
+
+zone "osckece.com" {
+type master ;
+file "/etc/bind/db.kece";
+};
+
+zone "137.168.192.in-addr.arpa" {
+type master ;
+file "/etc/bind/db.192";
+};
+
+cp db.127 db.192
+cp db.local db.mantap
+cp db.local db.kece
+
+ubah DNS NAT menjadi ke ip server supaya kalau dhcp dptnya ttp ip server dan bukan ke ip lain.
