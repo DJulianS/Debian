@@ -1,1 +1,9 @@
-
+nano /etc/network/interfaces
+untuk static --
+auto <interface>
+iface <interface> inet static
+address <ip_address>
+netmask <subnet_mask>
+untuk dhcp --
+auto <interface>
+iface <interface> inet dhcp
